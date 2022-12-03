@@ -27,4 +27,23 @@ export const sliderItems =[
     desc: "Don't compromise on style! Get flat 30% off for new arrivals.",
     bg: "f5fafd",
   },
+];
+
+
+export const categories = [
+  {
+    id:1,
+    img: "https://cff2.earth.com/uploads/2018/07/29145100/California-hits-climate-goals-but-traffic-pollution-rises.jpg",
+    title: "CALIFORNIA",
+  },
+  {
+    id:2,
+    img: "https://cff2.earth.com/uploads/2018/07/29145100/California-hits-climate-goals-but-traffic-pollution-rises.jpg",
+    title:"NEW YORK",
+  },
+  {
+    id:3,
+    img: "https://cff2.earth.com/uploads/2018/07/29145100/California-hits-climate-goals-but-traffic-pollution-rises.jpg" ,
+    title:"FLORIDA",
+  },
 ]
