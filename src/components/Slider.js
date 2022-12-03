@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
 import styled from "styled-components"
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
+import {sliderItems} from "../data"
 
 const Container = styled.div`
 margin-top: 50px;
@@ -31,23 +32,25 @@ opacity: 1;
 .sliders{
   color: white;
 }
-
+z-index: 2;
 `
 const Wrapper = styled.div`
 height:100%;
-width:100%;
 display: flex;
+transform:translateX(${props=>props.slideIndex * -100}vw);
+
 
 `
 const Slide = styled.div`
-width:100vh;
+width: 202vh;
 height: 100vh;
 display: flex;
 align-items: center;
+background-color: #${props=>props.bg};
 `;
 const ImageContainer = styled.div`
 height: 100%;
-flex:1;`;
+flex:1`
 const InfoContainer = styled.div`flex:1;
 padding: 50px;`;
 
@@ -80,27 +83,40 @@ border-radius: 250px;
 `;
 
 const Slider = ()=> {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
+    } else {
+      setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
+    }
+  };
   return (
     <Container>
-<Arrow direction="left">
+<Arrow direction="left" onClick={()=>handleClick("left")}>
   <FaArrowLeft className="sliders"/>
 </Arrow>
 
-<Wrapper>
-<Slide>
+<Wrapper slideIndex={slideIndex}>
+      {sliderItems.map(item => (
+
+
+
+<Slide bg={item.img}>
 <ImageContainer>
-<Image src="https://www.bestsmartdns.com/file/2015/07/online-shopping.jpg" />
+<Image src={item.img} />
 </ImageContainer>
 <InfoContainer>
-<Title> WINTER SALE</Title>
-<Desc> Don't compromise on style! Get flat 30% off for new arrivals.</Desc>
+<Title> {item.title}</Title>
+<Desc> {item.desc}</Desc>
 <Button> SHOW NOW</Button>
 
 </InfoContainer>
 </Slide>
+))};
  </Wrapper>
 
-<Arrow direction="right">
+<Arrow direction="right" onClick={()=>handleClick("right")} >
   <FaArrowRight className="sliders" />
 </Arrow>
 
