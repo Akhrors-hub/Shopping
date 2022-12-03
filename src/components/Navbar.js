@@ -74,7 +74,7 @@ const Navbar =()=>{
 </SearchContainer>
 </Left>
 <Center>
-<Logo><BsFillCloudArrowDownFill logotip="logos" /> TapBuyMe.com</Logo>
+<Logo><BsFillCloudArrowDownFill logotip="logos" /> SaleCart.com</Logo>
 
 </Center>
     <Right>

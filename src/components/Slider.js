@@ -9,7 +9,7 @@ width:100%;
 height: 100vh;
 display:flex;
 position: relative;
-
+overflow:hidden;
 `
 const Arrow = styled.div`
 
@@ -27,16 +27,17 @@ right: ${props=> props.direction === "right" && "10px"};
 bottom:0;
 margin: auto;
 cursor:pointer;
-opacity: 0.5;
+opacity: 1;
 .sliders{
   color: white;
 }
+
 `
 const Wrapper = styled.div`
 height:100%;
+width:100%;
 display: flex;
-justify-content: center;
-align-items: center;
+
 `
 const Slide = styled.div`
 width:100vh;
@@ -66,8 +67,9 @@ background-color: transparent;
 cursor: pointer;
 border-radius: 10px;
 &:hover{
-  color: red;
-  border-color:
+  color: purple;
+  border-color: purple
+
 }
 `;
 
@@ -85,6 +87,7 @@ const Slider = ()=> {
 </Arrow>
 
 <Wrapper>
+<Slide>
 <ImageContainer>
 <Image src="https://www.bestsmartdns.com/file/2015/07/online-shopping.jpg" />
 </ImageContainer>
@@ -94,10 +97,11 @@ const Slider = ()=> {
 <Button> SHOW NOW</Button>
 
 </InfoContainer>
+</Slide>
  </Wrapper>
 
 <Arrow direction="right">
-  <FaArrowRight />
+  <FaArrowRight className="sliders" />
 </Arrow>
 
     </Container>
