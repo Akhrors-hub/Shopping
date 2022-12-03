@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 height:100%;
 display: flex;
 transform:translateX(${props=>props.slideIndex * -100}vw);
-
+transition: all 3s ease;
 
 `
 const Slide = styled.div`
@@ -46,11 +46,11 @@ width: 202vh;
 height: 100vh;
 display: flex;
 align-items: center;
-background-color: #${props=>props.bg};
+background-color:${props=>props.bg};
 `;
 const ImageContainer = styled.div`
 height: 100%;
-flex:1`
+flex:1`;
 const InfoContainer = styled.div`flex:1;
 padding: 50px;`;
 
