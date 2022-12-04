@@ -47,3 +47,44 @@ export const categories = [
     title:"FLORIDA",
   },
 ]
+
+
+
+export const popularProducts = [
+  {
+    id:1,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:2,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:3,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:3,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:4,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:5,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:6,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:7,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+  {
+    id:8,
+    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+  },
+]
