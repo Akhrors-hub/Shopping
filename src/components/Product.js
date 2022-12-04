@@ -4,20 +4,67 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 
-import Circle from "./Circle"
+
 import {popularProducts} from "../data"
 
+const Container = styled.div`
+flex:1;
+margin: 5px;
 
-const Image = styled.img``
-const Info = styled.div``
-const Icon = styled.div``
+padding: px;
+min-width: 350px;
+mid-height: 270px;
+width: 250px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white
+z-index: 2;
+position: relative;
+`
+const Image = styled.img`
+height: 150px;
+width: 200px;
+padding: 20px;
+z-index:3;
 
-const Container = styled.div``
+
+`
+const Circle = styled.div`
+width:200px;
+height: 200px;
+border-radius: 50%;
+background-color:white;
+
+`
+
+const Info = styled.div`
+
+position: absolute;
+
+background-color: black;
+z-index:1;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const Icon = styled.div`
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+
+
 const Product = ({item})=> {
   return (
     <Container>
-        <Circle />
+        <Circle >
         <Image src={item.img}/>
+        </Circle>
         <Info>
               <Icon>
  <HiOutlineShoppingCart />
@@ -28,6 +75,7 @@ const Product = ({item})=> {
               <Icon>
 <AiOutlineHeart />
               </Icon>
+        
         </Info>
     </Container>
   )

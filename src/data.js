@@ -53,38 +53,35 @@ export const categories = [
 export const popularProducts = [
   {
     id:1,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/7189iXimfWL._AC_SL1500_.jpg",
   },
   {
     id:2,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/51e-grT5psL._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:3,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
-  },
-  {
-    id:3,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/41vJWVoaHQL._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:4,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/31uzWJv4p4L._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:5,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/41TDCjKbQnL._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:6,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/41p5ETfKiwL._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:7,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/51mh95se5qL._AC_UF452,452_FMjpg_.jpg",
   },
   {
     id:8,
-    img: "https://vecart.ru/wp-content/uploads/2020/09/wemg3g_qm0a_unfzwyog3uuylqg-1536x864.jpeg",
+    img: "https://m.media-amazon.com/images/I/41UDU+hPNDL._AC_UF452,452_FMjpg_.jpg",
   },
+
 ]

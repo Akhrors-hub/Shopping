@@ -14,7 +14,7 @@ overflow:hidden;
 `
 const Arrow = styled.div`
 
-width:50px;
+width:100px;
 height:50px;
 background-color: purple;
 border-radius: 50%;
@@ -36,13 +36,14 @@ z-index: 2;
 `
 const Wrapper = styled.div`
 height:100%;
+width: 100%;
 display: flex;
 transform:translateX(${props=>props.slideIndex * -100}vw);
 transition: all 3s ease;
 
 `
 const Slide = styled.div`
-width: 202vh;
+width: 250vh;
 height: 100vh;
 display: flex;
 align-items: center;
@@ -50,6 +51,7 @@ background-color:${props=>props.bg};
 `;
 const ImageContainer = styled.div`
 height: 100%;
+
 flex:1`;
 const InfoContainer = styled.div`flex:1;
 padding: 50px;`;

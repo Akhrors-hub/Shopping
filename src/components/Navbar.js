@@ -47,6 +47,7 @@ font-family: cursive;
 color:purple;
 font-size: 40px;
 
+
 `
 
 const Right = styled.div`
