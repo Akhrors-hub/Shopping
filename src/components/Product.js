@@ -11,28 +11,36 @@ const Container = styled.div`
 flex:1;
 margin: 5px;
 
-padding: px;
+padding: 10px;
 min-width: 350px;
 mid-height: 270px;
 width: 250px;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: white
+background-color: #fce8ff;
 z-index: 2;
 position: relative;
+
+&:hover ${Info} {
+  opacity:1;
+}
+
 `
 const Image = styled.img`
-height: 150px;
-width: 200px;
-padding: 20px;
+height: 125px;
+width: 150px;
+padding: 40px 25px;;
 z-index:3;
+
+
 
 
 `
 const Circle = styled.div`
 width:200px;
 height: 200px;
+padding: 5px;
 border-radius: 50%;
 background-color:white;
 
@@ -42,7 +50,7 @@ const Info = styled.div`
 
 position: absolute;
 
-background-color: black;
+opacity:0;
 z-index:1;
 display: flex;
 align-items: center;
@@ -51,11 +59,18 @@ justify-content: center;
 const Icon = styled.div`
 width: 40px;
 height: 40px;
+margin-right: 10px;
+padding: 3px;
 border-radius: 50%;
 background-color: white;
 display: flex;
 align-items: center;
 justify-content: center;
+
+&:hover{
+  background-color: purple;
+  color: white;
+}
 `
 
 
