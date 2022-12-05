@@ -6,7 +6,16 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 
 import {popularProducts} from "../data"
+const Info = styled.div`
 
+position: absolute;
+
+opacity:0;
+z-index:1;
+display: flex;
+align-items: center;
+justify-content: center;
+`
 const Container = styled.div`
 flex:1;
 margin: 5px;
@@ -22,8 +31,15 @@ background-color: #fce8ff;
 z-index: 2;
 position: relative;
 
-&:hover ${Info} {
+&:hover {
+  background-color: purple;
+  
+}
+
+
+&:hover ${Info}{
   opacity:1;
+ cursor: pointer;
 }
 
 `
@@ -46,16 +62,7 @@ background-color:white;
 
 `
 
-const Info = styled.div`
 
-position: absolute;
-
-opacity:0;
-z-index:1;
-display: flex;
-align-items: center;
-justify-content: center;
-`
 const Icon = styled.div`
 width: 40px;
 height: 40px;
