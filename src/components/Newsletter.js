@@ -26,12 +26,29 @@ height: 40px;
 background-color: white;
 display: flex;
 justify-content: space-between;
-border:1 ssolid lightgrey;
+border:1px solid lightgray;
 `
-const Button = styled.div``
+const Button = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+color: purple;
+
+
+&:hover{
+    background-color: purple;
+    color: white;
+}
+
+flex:1;
+`
 const Input = styled.input`
 border: none;
-outline:none;`
+outline:none;
+flex:8;
+padding-left:20px;
+`
 
 const Newsletter = ()=> {
     return (
