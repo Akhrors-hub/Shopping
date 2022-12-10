@@ -63,7 +63,11 @@ margin-right: 20px;
  margin-bottom: 10px;
  `
 
-const ContactItem = styled.div``
+const ContactItem = styled.div`
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+`
 
 const Payment =styled.img``
 
