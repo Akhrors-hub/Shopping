@@ -12,6 +12,7 @@ const Image = styled.img`
 width:100%;
 height:100%;
 object-fit: cover;
+opacity: 0.7;
 
 `
 const Info = styled.div`
@@ -24,10 +25,16 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
 `
+
+
 const Title = styled.h1`
-  color: white;
+  color: purple;
   margin-bottom: 20px;
+  font-size: 60px;
+ 
+
 `
 const Button =styled.button`
 border:none;
@@ -36,6 +43,7 @@ background-color: white;
 color: gray;
 cursor: pointer;
 font-weight:600;
+
 `
 
 
@@ -44,8 +52,10 @@ const CategoryItem = ({item})=> {
     <Container>
       <Image src={item.img}/>
       <Info>
+       
           <Title>{item.title}</Title>
           <Button> SHOP NOW</Button>
+        
       </Info>
     </Container>
   )

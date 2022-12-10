@@ -38,12 +38,12 @@ export const categories = [
   },
   {
     id:2,
-    img: "https://cff2.earth.com/uploads/2018/07/29145100/California-hits-climate-goals-but-traffic-pollution-rises.jpg",
+    img: "https://www.holidify.com/images/cmsuploads/compressed/58138750686982082c26b_20201030144417.jpg",
     title:"NEW YORK",
   },
   {
     id:3,
-    img: "https://cff2.earth.com/uploads/2018/07/29145100/California-hits-climate-goals-but-traffic-pollution-rises.jpg" ,
+    img: "https://th.bing.com/th/id/OIP.bQZoHrJAJZnSm3la-fdOSgHaE8?pid=ImgDet&rs=1" ,
     title:"FLORIDA",
   },
 ]
