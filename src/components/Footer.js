@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { FaFacebookSquare } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaTwitterSquare } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { BsTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 const Container = styled.div`
 display:flex;
@@ -46,12 +49,23 @@ justify-content: center;
 margin-right: 20px;
 
 `
- const Title = styled.h3``
- const List = styled.ul``
- const ListItem = styled.li``
+ const Title = styled.h3`
+ margin-bottom: 30px;`
+ const List = styled.ul`
+ margin:0;
+ padding:0;
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+ `
+ const ListItem = styled.li`
+ width: 50%;
+ margin-bottom: 10px;
+ `
 
+const ContactItem = styled.div``
 
-
+const Payment =styled.img``
 
 
 const Footer =()=>{
@@ -93,6 +107,21 @@ The majority of websites aren’t, and don’t need to be, single-page apps. Wit
 </List>
 </Center>
     <Right>
+        <Title>
+            Contact
+        </Title>
+        <ContactItem> 
+            <FaMapMarkerAlt />
+            San Francisco, CA</ContactItem>
+        <ContactItem>
+            <BsTelephoneFill />
+            +(1) 628-233-0440
+        </ContactItem>
+        <ContactItem>
+            <MdEmail />
+            mi7akhror@gmail.com
+        </ContactItem>
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>        
         </Container>
     )
