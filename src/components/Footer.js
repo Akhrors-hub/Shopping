@@ -28,8 +28,7 @@ const Description = styled.p`
 margin: 20px 0px;
 `
 const Logo = styled.h1`
-text-align:cener;
-justify-content: center;
+
 `
 const SocialContainer = styled.div`
 display: flex;
@@ -47,7 +46,13 @@ justify-content: center;
 margin-right: 20px;
 
 `
- 
+ const Title = styled.h3``
+ const List = styled.ul``
+ const ListItem = styled.li``
+
+
+
+
 
 const Footer =()=>{
     return (
@@ -72,7 +77,20 @@ The majority of websites aren’t, and don’t need to be, single-page apps. Wit
                 </SocialContainer>
             </Left>
 <Center>
-
+<Title>
+    Useful Links
+</Title>
+<List>
+        <ListItem>Home</ListItem>
+        <ListItem>Cart</ListItem>
+        <ListItem>Man Fashion</ListItem>
+        <ListItem>Woman Fashion</ListItem>
+        <ListItem>Accessories</ListItem>
+        <ListItem>My Account</ListItem>
+        <ListItem>Order Tracking</ListItem>
+        <ListItem> WishList</ListItem>
+        <ListItem>Terms</ListItem>
+</List>
 </Center>
     <Right>
         </Right>        
