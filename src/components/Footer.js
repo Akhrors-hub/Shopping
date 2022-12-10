@@ -15,7 +15,7 @@ background-color: white;
 `
 const Left = styled.div`
 flex:1;
-padding: 20px;
+padding: 40px;
 
 `
 
@@ -28,10 +28,25 @@ flex:1;
 padding: 20px;
 `
 const Description = styled.p`
-margin: 20px 0px;
+margin: 20px;
+background-color: purple;
+padding: 20px;
+border-radius: 20px;
+color:white;
+
+&:hover{
+    transition: all 3s ease;
+    transform: scale(1.1);
+}
 `
 const Logo = styled.h1`
-
+text-align: center;
+color: purple;
+&:hover{
+    color: black;
+    transition: all 3s ease;
+    transform: scale(1.8);
+}
 `
 const SocialContainer = styled.div`
 display: flex;
@@ -48,6 +63,13 @@ align-items: center;
 justify-content: center;
 margin-right: 20px;
 
+&:hover{
+    
+
+    transition: all 3s ease;
+    transform: scale(1.8);
+}
+
 `
  const Title = styled.h3`
  margin-bottom: 30px;`
@@ -61,7 +83,9 @@ margin-right: 20px;
  const ListItem = styled.li`
  width: 50%;
  margin-bottom: 10px;
+ text-decoration: none;
  `
+
 
 const ContactItem = styled.div`
 margin-bottom: 20px;
@@ -69,7 +93,8 @@ display: flex;
 align-items: center;
 `
 
-const Payment =styled.img``
+const Payment =styled.img`
+width: 50%;`
 
 
 const Footer =()=>{
@@ -99,15 +124,15 @@ The majority of websites aren’t, and don’t need to be, single-page apps. Wit
     Useful Links
 </Title>
 <List>
-        <ListItem>Home</ListItem>
-        <ListItem>Cart</ListItem>
-        <ListItem>Man Fashion</ListItem>
-        <ListItem>Woman Fashion</ListItem>
-        <ListItem>Accessories</ListItem>
-        <ListItem>My Account</ListItem>
-        <ListItem>Order Tracking</ListItem>
-        <ListItem> WishList</ListItem>
-        <ListItem>Terms</ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Home</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Cart</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Man Fashion</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Woman Fashion</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Accessories</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>My Account</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Order Tracking</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>WishList</a></ListItem>
+        <ListItem><a href="#" style={{textDecoration:"none", color: "purple"}}>Terms</a></ListItem>
 </List>
 </Center>
     <Right>
@@ -115,14 +140,14 @@ The majority of websites aren’t, and don’t need to be, single-page apps. Wit
             Contact
         </Title>
         <ContactItem> 
-            <FaMapMarkerAlt />
+            <FaMapMarkerAlt style={{marginRight:"10px"}} />
             San Francisco, CA</ContactItem>
         <ContactItem>
-            <BsTelephoneFill />
+            <BsTelephoneFill style={{marginRight:"10px"}} />
             +(1) 628-233-0440
         </ContactItem>
         <ContactItem>
-            <MdEmail />
+            <MdEmail style={{marginRight:"10px"}} />
             mi7akhror@gmail.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
