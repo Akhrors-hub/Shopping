@@ -43,7 +43,7 @@ transition: all 3s ease;
 
 `
 const Slide = styled.div`
-width: 190vh;
+width: 201.5vh;
 height: 100vh;
 display: flex;
 align-items: center;
