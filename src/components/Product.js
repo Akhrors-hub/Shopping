@@ -48,10 +48,6 @@ height: 125px;
 width: 150px;
 padding: 40px 25px;;
 z-index:3;
-
-
-
-
 `
 const Circle = styled.div`
 width:200px;
