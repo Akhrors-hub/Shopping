@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { FaSearch } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
 import { BsFillCloudArrowDownFill } from "react-icons/bs";
+import { Link } from 'react-router-dom'
+import { useSelector,useDispatch } from "react-redux";
+import { logout } from "../actions/authactions"
 
 
 const Container = styled.div`
@@ -64,6 +67,10 @@ margin-left: 25px;
 `
 
 const Navbar =()=>{
+  const auth = useSelector(state => state)
+  console.log(auth)
+  const dispatch = useDispatch()
+
   return (
     <Container>
     <Wrapper>
@@ -78,9 +85,15 @@ const Navbar =()=>{
 <Logo><BsFillCloudArrowDownFill logotip="logos" /> SaleCart.com</Logo>
 
 </Center>
-    <Right>
-<MenuItem>REGISTER</MenuItem>
-<MenuItem>SIGN IN</MenuItem>
+    <Right>{auth&&auth.isAuth?(
+          <MenuItem><Link onClick={()=>dispatch(logout())}>LOG OUT</Link></MenuItem>
+    ):(
+         <>
+      <MenuItem><Link to="/register">REGISTER</Link></MenuItem>
+<MenuItem><Link to="/login"> LOG IN</Link></MenuItem>
+   </>  )}
+   
+
 <MenuItem>
 
 <BsCart />

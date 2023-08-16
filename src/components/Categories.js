@@ -8,6 +8,8 @@ const Container = styled.div`
 display: flex;
 padding:20px;
 `
+const Select = styled.select``
+const Option = styled.option``
 
 const Categories = ()=> {
   return (
