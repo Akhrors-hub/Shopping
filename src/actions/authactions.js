@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "../utils/axios"
 import { USER_LOADED,
  USER_LOADING,
  AUTH_ERROR,

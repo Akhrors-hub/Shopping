@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import axios from "axios"
+import axios from "./utils/axios"
 import logo from './logo.svg';
 import Home from "./pages/Home"
 import AddProduct from "./components/AddProduct";
@@ -33,14 +33,7 @@ function App() {
  
   const [modalText, setModalText] = useState("text")
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  axios.interceptors.request.use(config => {
-const cookie = getCookie()
-if(cookie.token){
-  config.headers["auth-token"] = cookie.token
-}
-    
-    return config
-  })
+
   axios.interceptors.response.use((response)=>response,(err)=>{
 console.log(err)
    if(err.response&&err.response.data.error){

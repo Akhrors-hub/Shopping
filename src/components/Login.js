@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from "axios"
+import axios from "../utils/axios"
 import { connect } from "react-redux"
 import { login } from "../actions/authactions"
 import { useNavigate } from 'react-router-dom';

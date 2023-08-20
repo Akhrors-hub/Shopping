@@ -10,7 +10,7 @@ function Persist({children}){
     useEffect(()=>{
         const cookie = getCookie()
         dispatch(loadUser(cookie))
-      })
+      },[])
     return children
 }
 export default Persist;
