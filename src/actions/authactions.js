@@ -16,14 +16,9 @@ export const loadUser = (userData)=>{
 }
 
 export const register =({email,password})=>dispatch=>{
-const config = {
-    headers:{
-        "Content-Type": "application/json"
 
-    }
-}
-const body = JSON.stringify({email,password})
-axios.post("/api/auth/register",body,config)
+
+axios.post("/api/auth/register",{email, password})
 .then(res=>(dispatch({
     type: REGISTER_SUCCESS,
     payload: {user: res.data.user, token: res.headers["auth-token"]}
@@ -35,14 +30,9 @@ axios.post("/api/auth/register",body,config)
 
 
 export const login =({email,password})=>dispatch=>{
-    const config = {
-        headers:{
-            "Content-Type": "application/json"
     
-        }
-    }
-    const body = JSON.stringify({email,password})
-    axios.post("/api/auth/login",body,config)
+   
+    axios.post("/api/auth/login",{email, password})
     .then(res=>{
         console.log(res)
         return (dispatch({
@@ -51,9 +41,9 @@ export const login =({email,password})=>dispatch=>{
     }))}).catch(err=>(dispatch({
             type: LOGIN_FAIL,
                })))
-    }
+            }
 
 
 
-    export const logout =()=>( { type: LOGOUT_SUCCESS })
+    export const logout =()=> ( { type: LOGOUT_SUCCESS })
         

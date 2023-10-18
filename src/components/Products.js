@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import {popularProducts} from "../data"
 import Product from "./Product"
+import axios from "../utils/axios"
 
 const Container = styled.div`
 padding: 20px;
@@ -12,10 +13,20 @@ justify-content: space-between;
 `
 
 const Products = ()=> {
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+axios.get("/api/product")
+.then(response => {
+  setProducts(response.data)
+})
+  
+  },[])
+  console.log(products)
   return (
     <Container>
-        {popularProducts.map(item=>(
-          <Product item={item} key={item.id} />
+        {products.map(item=>(
+          <Product item={item} key={item._id} />
+          
         ))}
     </Container>
   )

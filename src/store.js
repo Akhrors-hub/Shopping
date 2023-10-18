@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./reducers/authreducer";
+import reducer from "./reducers";
 import thunk from 'redux-thunk';
 
 
 
 export const store = configureStore({
-  reducer: authReducer,
+  reducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: [thunk]
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import axios from '../utils/axios'
 const AddProduct = () => {
   const [product, setProduct] = useState({
     name: '',
@@ -21,17 +21,10 @@ const AddProduct = () => {
   const handleSubmit = event => {
     event.preventDefault();
     // Send the new product data to the backend
-    fetch('/api/product', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    })
-      .then(response => response.json())
-      .then(data => {
+    axios.post('/api/product', product)
+      .then(response => {
         // Handle successful submission (redirect, show success message, etc.)
-        console.log('Product added:', data);
+        console.log('Product added:', response);
       })
       .catch(error => {
         // Handle error

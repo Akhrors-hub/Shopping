@@ -9,15 +9,19 @@ import Register from "./components/Register";
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import { store } from "./store"
-import { Provider } from "react-redux"
+import { Provider, useSelector } from "react-redux"
 import Login from "./components/Login"
 import Modal from "react-modal"
 import Persist from "./components/Persist";
 import { getCookie } from "./utils/cookie";
-
-
-
-
+import Products from "./components/Products";
+import Admin from "./pages/Admin"
+import AppHeader from "./Layout/AppHeader"
+import AppSidebar from "./Layout/AppSidebar"
+import AppFooter from "./Layout/AppFooter"
+import ResizeDetector from 'react-resize-detector';
+import cx from 'classnames'
+import DetailedProducts from "./components/DetailedProducts";
 const customStyles = {
   content: {
     top: '50%',
@@ -30,10 +34,25 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 function App() {
- 
+  
+  let auth = useSelector(state => state.auth)
+  let ThemeOptions = useSelector(state => state.ThemeOptions)
+  const {
+    colorScheme,
+    enableFixedHeader,
+    enableMobileMenu,
+    enableFixedFooter,
+    enableFixedSidebar,
+    enableClosedSidebar,
+    enablePageTabsAlt,
+  } = ThemeOptions
+  const user = auth?auth.user:null
+  const isAuth = auth?auth.isAuth:false
   const [modalText, setModalText] = useState("text")
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
+  console.log(modalIsOpen)
+  const [width, setWidth] = useState(undefined)
+  const [closedSmallerSidebar, setClosedSmallerSidebar] = useState(false)
   axios.interceptors.response.use((response)=>response,(err)=>{
 console.log(err)
    if(err.response&&err.response.data.error){
@@ -44,25 +63,55 @@ console.log(err)
    )
   function openModal() {
     setIsOpen(true);
+ 
+    console.log('open modal')
   }
-
+  console.log()
   function closeModal() {
     setIsOpen(false);
   }
   function modalAlert(msg){
+    console.log('test modal')
     setModalText(msg)
     openModal()
   }
-  
+  const onResize = (width) => setWidth(width);
+  function renderIfAdmin (value){
+    if(user&&user.type=="Admin"){
+      return value
+    }else{
+      return null
+    }
+
+  }
   return (
 
-        <Provider store={store}>
-         <Persist/>
+       
     <div className="App">
-<Router> 
+ <div className={user&&user.type=="Admin"&&cx(
+                    "app-container app-theme-" + colorScheme,
+                    {'fixed-header': enableFixedHeader},
+                    {'fixed-sidebar': enableFixedSidebar || width < 1250},
+                    {'fixed-footer': enableFixedFooter},
+                    {'closed-sidebar': enableClosedSidebar || width < 1250},
+                    {'closed-sidebar-mobile': closedSmallerSidebar || width < 1250},
+                    {'sidebar-mobile-open': enableMobileMenu},
+                )}>
+                    <ResizeDetector handleWidth onResize={onResize} />
+    <Router> 
+        {user&&user.type=="Admin"&&<AppHeader/>}
+       
+        <div className="app-main">
+        {user&&user.type=="Admin"&&<AppSidebar/>}
+            <div className="app-main__outer">
+                <div className="app-main__inner">
+            
+       
+   
+
 <Navbar/>
 <div>
-    
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -76,16 +125,22 @@ console.log(err)
     </div>
   <Routes>
   <Route path = "/" element = {<Home />}> </Route>
-  <Route path = "/product/add" element = {<AddProduct />}> </Route>
-<Route path = "/register" element = {<Register />}> </Route>
-<Route path = "/login" element = {<Login />}> </Route>
+  <Route path = "/product/add" element = {user&&user.type=="Admin"?<AddProduct />:<Home />}> </Route>
+  <Route path = "/products" element = {<Products />}> </Route>
+<Route path = "/register" element = {isAuth?<Home />:<Register />}> </Route>
+<Route path = "/login" element = {isAuth?<Home />:<Login />}> </Route>
+<Route path = "/admin" element = {user&&user.type=="Admin"?<Admin />:<Home />}> </Route>
+<Route path = "/detailedProducts" element = {user&&user.type=="Admin"?<DetailedProducts />:<Home />}> </Route>
   </Routes>
-  <Footer />
+  
+  {window.location.pathname!="/login"&&window.location.pathname!="/register"&&<Footer />}</div>
+  </div>
+  </div>
 </Router>
 
-    </div>
-       </Provider>
-
+</div>
+ </div>
+ 
   );
 }
 

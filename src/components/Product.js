@@ -44,8 +44,8 @@ position: relative;
 
 `
 const Image = styled.img`
-height: 125px;
-width: 150px;
+height: 200px;
+width: 200px;
 padding: 40px 25px;;
 z-index:3;
 `
@@ -81,9 +81,10 @@ const Product = ({item})=> {
   return (
     <Container>
         <Circle >
-        <Image src={item.img}/>
+        <Image src={item.imageURL}/>
         </Circle>
         <Info>
+          <p>name: {item.name}</p>
               <Icon>
  <HiOutlineShoppingCart />
               </Icon>

@@ -14,11 +14,11 @@ function setAuthTokenHeader (token){
     console.log(token)
     axios.interceptors.request.eject(interceptor)
     interceptor = axios.interceptors.request.use(config => {
-        config.headers = {"auth-token": token}
+        config.headers["auth-token"] = token
         console.log(config)
                 return config
      })
-   }
+   }    
 
 const initialState = {
     isAuth: false,
@@ -28,7 +28,7 @@ const initialState = {
 
 function authReducer (state= initialState, action){
     console.log(action, state)
-    switch (action.type) {
+  switch (action.type) { 
         case USER_LOADED:
             if(action.payload!={}){
                 setAuthTokenHeader(action.payload.token)
@@ -53,8 +53,9 @@ function authReducer (state= initialState, action){
             updateCookie("token", null)
             setAuthTokenHeader(null)
     return {...state,isAuth: false, user: null, token: null}
-
+    
     }
+    return state
 }
 
 export default authReducer;
