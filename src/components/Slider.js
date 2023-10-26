@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import {sliderItems} from "../data"
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
 margin-top: 50px;
@@ -85,6 +86,8 @@ border-radius: 250px;
 `;
 
 const Slider = ()=> {
+const navigate = useNavigate();
+
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -111,7 +114,7 @@ const Slider = ()=> {
 <InfoContainer>
 <Title> {item.title}</Title>
 <Desc> {item.desc}</Desc>
-<Button> SHOW NOW</Button>
+<Button onClick={()=>navigate("/products")}> SHOW NOW</Button>
 
 </InfoContainer>
 </Slide>

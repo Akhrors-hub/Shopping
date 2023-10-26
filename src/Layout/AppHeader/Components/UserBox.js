@@ -26,6 +26,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import 'react-toastify/dist/ReactToastify.css';
 
 import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
+import defaultAvatar from '../../../assets/utils/images/avatars/default.jpg';
+import { BsCart } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 class UserBox extends React.Component {
     constructor(props) {
@@ -43,66 +46,102 @@ class UserBox extends React.Component {
         position: 'bottom-center',
         type: 'success'
     });
-   
+ 
+ loggedIn = (
+    <Fragment>
+    <div className="widget-content-left">
+    <UncontrolledButtonDropdown>
+        <DropdownToggle color="link" className="p-0">
+            <img width={42} className="rounded-circle" src={avatar1} alt=""/>
+            <FontAwesomeIcon className="ms-2 opacity-8" icon={faAngleDown}/>
+        </DropdownToggle>
+        <DropdownMenu end className="rm-pointers dropdown-menu-lg">
+            <Nav vertical>
+              
+               
+              
+                <NavItem className="nav-item-header">
+                    My Account
+                </NavItem>
+                <NavItem>
+                    <NavLink href="#">Change Password</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="#">
+                        Settings
+                        
+                    </NavLink>
+                </NavItem>
+               
+                <NavItem>
+                    <NavLink onClick={()=> this.props.logout()}>
+                    LOG OUT
+                        
+                    </NavLink>
+                </NavItem>
 
+            </Nav>
+        </DropdownMenu>
+    </UncontrolledButtonDropdown>
+</div>
+<div className="widget-content-left  ms-3 header-user-info">
+    <div className="widget-heading">
+    <BsCart />
+    </div>
+   
+</div>
+</Fragment>
+)
+
+loggedOut = (
+    <Fragment>
+    <div className="widget-content-left">
+    <UncontrolledButtonDropdown>
+        <DropdownToggle color="link" className="p-0">
+            <img width={42} className="rounded-circle" src={defaultAvatar}  alt=""/>
+            <FontAwesomeIcon className="ms-2 opacity-8" icon={faAngleDown}/>
+        </DropdownToggle>
+        <DropdownMenu end className="rm-pointers dropdown-menu-lg">
+            <Nav vertical>
+              
+            
+            <NavItem>
+                    <NavLink >
+                    <Link to="/login"> LOG IN</Link>
+                        
+                    </NavLink>
+                </NavItem>
+   
+                <NavItem>
+                    <NavLink>
+                    <Link to="/register">REGISTER</Link>
+                        
+                    </NavLink>
+                </NavItem>
+
+            </Nav>
+        </DropdownMenu>
+    </UncontrolledButtonDropdown>
+</div>
+<div className="widget-content-left  ms-3 header-user-info">
+   
+</div>
+</Fragment>
+)
     render() {
-        const { auth } = this.props;
+        const { auth, isAuth } = this.props;    
         console.log(this.props)
         return (
             <Fragment>
                 <div className="header-btn-lg pe-0">
                     <div className="widget-content p-0">
                         <div className="widget-content-wrapper">
-                            <div className="widget-content-left">
-                                <UncontrolledButtonDropdown>
-                                    <DropdownToggle color="link" className="p-0">
-                                        <img width={42} className="rounded-circle" src={avatar1} alt=""/>
-                                        <FontAwesomeIcon className="ms-2 opacity-8" icon={faAngleDown}/>
-                                    </DropdownToggle>
-                                    <DropdownMenu end className="rm-pointers dropdown-menu-lg">
-                                        <Nav vertical>
-                                          
-                                           
-                                          
-                                            <NavItem className="nav-item-header">
-                                                My Account
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink href="#">Change Password</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink href="#">
-                                                    Settings
-                                                    
-                                                </NavLink>
-                                            </NavItem>
-                                           
-                                            <NavItem>
-                                                <NavLink onClick={()=> this.props.logout()}>
-                                                LOG OUT
-                                                    
-                                                </NavLink>
-                                            </NavItem>
+                        {isAuth?this.loggedIn:this.loggedOut}   
 
-                                        </Nav>
-                                    </DropdownMenu>
-                                </UncontrolledButtonDropdown>
-                            </div>
-                            <div className="widget-content-left  ms-3 header-user-info">
-                                <div className="widget-heading">
-                              {auth.user.email}
-                                </div>
-                               
-                            </div>
 
                             <div className="widget-content-right header-user-info ms-3">
-                                <Button className="btn-shadow p-1" size="sm" onClick={this.notify2} color="info"
-                                        id="Tooltip-1">
-                                    <FontAwesomeIcon className="me-2 ms-2" icon={faCalendarAlt}/>
-                                </Button>
-                                <UncontrolledTooltip placement="bottom" target={'Tooltip-1'}>
-                                    Click for Toastify Notifications!
-                                </UncontrolledTooltip>
+                                
+
                             </div>
                         </div>
                     </div>
@@ -113,7 +152,8 @@ class UserBox extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    auth: state.auth// Adjust this based on your actual state structure
+    auth: state.auth,// Adjust this based on your actual state structure
+    isAuth: state.auth.isAuth
   });
   
   

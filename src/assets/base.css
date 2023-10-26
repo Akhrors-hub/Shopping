@@ -1,5 +1,13 @@
 @charset "UTF-8";
+.dark {
+  color: purple !important;
+}
 
+.searchBox {
+  display: flex;
+  align-items: center;
+
+}
 .border-primary {
   border-color: #545cd8;
 }
@@ -8180,7 +8188,8 @@ fieldset:disabled .btn {
 }
 
 .ms-auto {
-  margin-left: auto !important;
+  margin-left: 15px;
+    margin-right: 15px;
 }
 
 .p-0 {
@@ -12050,13 +12059,13 @@ button,
 
 .app-header {
   height: 60px;
-  display: flex;
+  display: grid;
   align-items: center;
   align-content: center;
   position: relative;
   z-index: 10;
   transition: all 0.2s;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .app-header.header-shadow {
@@ -12096,7 +12105,7 @@ button,
 .app-header__logo {
   padding: 0 1.5rem;
   height: 60px;
-  width: 280px;
+  margin: auto;
   display: flex;
   align-items: center;
   transition: width 0.2s;
@@ -12222,7 +12231,8 @@ button,
 
 .header-btn-lg {
   padding: 0 0 0 1.5rem;
-  margin-left: 1.5rem;
+  margin-left: auto;
+    margin-right: 15px;
   display: flex;
   align-items: center;
   position: relative;
@@ -12299,7 +12309,7 @@ button,
 .app-header.header-text-light .search-wrapper .input-holder .search-input:-ms-input-placeholder,
 .app-header.header-text-light .search-wrapper .input-holder .search-input:-moz-placeholder,
 .app-header.header-text-light .search-wrapper .input-holder .search-input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: purple !important;
 }
 
 .app-header.header-text-light .search-wrapper.active .input-holder {
@@ -12307,7 +12317,8 @@ button,
 }
 
 .app-header.header-text-light .search-wrapper.active .input-holder .search-input {
-  color: rgba(255, 255, 255, 0.8);
+  color: purple;
+    background-color: white;
 }
 
 .app-header.header-text-light .search-wrapper.active .input-holder .search-icon {
@@ -12326,7 +12337,7 @@ button,
 .app-header.header-text-light .header__pane .Burger.BurgerActive .BurgerInner,
 .app-header.header-text-light .header__pane .BurgerInner::before,
 .app-header.header-text-light .header__pane .BurgerInner::after {
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: purple;
 }
 
 .app-header.header-text-light .search-wrapper .input-holder .search-icon span::after {
@@ -12900,7 +12911,7 @@ button,
 }
 
 .closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo {
-  width: 80px;
+
 }
 
 .closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-src {
@@ -12978,7 +12989,7 @@ button,
 }
 
 .app-main .app-main__inner {
-  padding: 1.5rem 1.5rem 0;
+
   flex: 1;
 }
 
@@ -13312,7 +13323,9 @@ button,
 
 .search-wrapper {
   position: relative;
+  width: 330px;
   margin-right: 0.6666666667rem;
+  margin-left: 15px;
 }
 
 .search-wrapper .input-holder {

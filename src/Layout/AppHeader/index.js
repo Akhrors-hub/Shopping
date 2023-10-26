@@ -27,28 +27,29 @@ class Header extends React.Component {
                         timeout={1500}
                         enter={false}
                         exit={false}>
-                        <div>
+                        <div className="headerLayout">
 
-                        <SearchBox/>
-
-                            <div className={cx(
+                        <SearchBox />
+                        <HeaderLogo/>
+                        <UserBox />
+                            {/* <div className={cx(
                                 "app-header__content",
                                 {'header-mobile-open': enableMobileMenuSmall},
                             )}>
                                 <div className="app-header-left">
                                    
-                                    <HeaderLogo/>
+                               
                                 </div>
                                 <div className="app-header-right">
-                                    <UserBox/>
+                                  
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
             </Fragment>
         );
-    }
+    }z
 }
 
 const mapStateToProps = state => ({

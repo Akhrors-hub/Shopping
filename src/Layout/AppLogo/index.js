@@ -12,12 +12,14 @@ import {
 } from '../../reducers/ThemeOptions';
 import { BsFillCloudArrowDownFill } from 'react-icons/bs';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Logo = styled.h1`
 font-weight: bold;
 font-family: cursive;
 color:purple;
 font-size: 35px;
+display: inline;
 `
 
 
@@ -58,17 +60,8 @@ class HeaderLogo extends React.Component {
         return (
             <Fragment>
                 <div className="app-header__logo">
-                <Logo><BsFillCloudArrowDownFill logotip="logos" /> SaleCart.com</Logo>
-                    <div className="header__pane ms-auto">
-                    
-                        <div onClick={this.toggleEnableClosedSidebar}>
-                            <Slider
-                                active={enableClosedSidebar}
-                                type="elastic"
-                                onClick={() => this.setState({active: !this.state.active})}
-                            />
-                        </div>
-                    </div>
+                <Link to="/"><Logo><BsFillCloudArrowDownFill logotip="logos" className="logo" /> SaleCart.com</Logo></Link>
+  
                 </div>
                 <AppMobileMenu/>
             </Fragment>

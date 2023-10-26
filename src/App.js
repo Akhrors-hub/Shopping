@@ -88,7 +88,7 @@ console.log(err)
 
        
     <div className="App">
- <div className={user&&user.type=="Admin"&&cx(
+ <div className={user&&user.type=="Admin"?cx(
                     "app-container app-theme-" + colorScheme,
                     {'fixed-header': enableFixedHeader},
                     {'fixed-sidebar': enableFixedSidebar || width < 1250},
@@ -96,10 +96,11 @@ console.log(err)
                     {'closed-sidebar': enableClosedSidebar || width < 1250},
                     {'closed-sidebar-mobile': closedSmallerSidebar || width < 1250},
                     {'sidebar-mobile-open': enableMobileMenu},
-                )}>
+                ):isAuth&&cx( "app-container app-theme-" + colorScheme,
+                {'fixed-header': enableFixedHeader})}>
                     <ResizeDetector handleWidth onResize={onResize} />
     <Router> 
-        {user&&user.type=="Admin"&&<AppHeader/>}
+       <AppHeader />
        
         <div className="app-main">
         {user&&user.type=="Admin"&&<AppSidebar/>}
@@ -109,7 +110,7 @@ console.log(err)
        
    
 
-<Navbar/>
+
 <div>
 
       <Modal

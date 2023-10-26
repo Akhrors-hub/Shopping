@@ -1,7 +1,7 @@
-export const MainNav = [
+export const UsersNav = [
     {
         icon: 'pe-7s-rocket',
-        label: 'Dashboard Example',
+        label: 'Users Accounts',
         to: '#/dashboards/basic',
     },
 ];
