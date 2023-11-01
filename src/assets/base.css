@@ -383,12 +383,24 @@ label {
 
 button {
   border-radius: 0;
+  background-color: purple;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 button:focus:not(:focus-visible) {
   outline: 0;
 }
 
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 input,
 button,
 select,
@@ -398,6 +410,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  
 }
 
 button,
@@ -12976,7 +12989,7 @@ button,
 
 .app-main {
   z-index: 8;
-  position: relative;
+
   display: flex;
 }
 
@@ -13010,6 +13023,7 @@ button,
   background: transparent;
   position: relative;
   z-index: 7;
+  
 }
 
 .body-tabs-shadow-btn .app-main__inner>.RRT__container .body-tabs-layout .RRT__showmore {
@@ -31316,6 +31330,7 @@ fieldset[disabled] .rw-multiselect-tag {
 @media (max-width: 767.98px) {
   .app-main {
     display: block;
+    
   }
 
   .dropdown-menu::before,
