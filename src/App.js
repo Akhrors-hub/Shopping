@@ -31,8 +31,7 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    position: 'absolute',
-    zIndex: 99
+   
   },
 };
 Modal.setAppElement('#root');
@@ -116,7 +115,7 @@ console.log(err)
    
 
 
-
+<div>
 
       <Modal
         isOpen={modalIsOpen}
@@ -128,7 +127,7 @@ console.log(err)
         <div>{modalText}</div>
        
       </Modal>
-   
+      </div>
   <Routes>
   <Route path = "/" element = {<Home />}> </Route>
   <Route path = "/product/add" element = {user&&user.type=="Admin"?<AddProduct />:<Home />}> </Route>
