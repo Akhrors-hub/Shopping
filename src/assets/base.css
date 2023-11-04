@@ -12989,7 +12989,7 @@ button,
 
 .app-main {
   z-index: 8;
-
+  position: relative;
   display: flex;
 }
 

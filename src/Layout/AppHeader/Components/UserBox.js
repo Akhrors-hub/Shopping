@@ -106,15 +106,15 @@ loggedOut = (
               
             
             <NavItem>
-                    <NavLink >
-                    <Link to="/login"> LOG IN</Link>
+                 <NavLink href="/login">
+                   LOG IN
                         
                     </NavLink>
                 </NavItem>
    
                 <NavItem>
-                    <NavLink>
-                    <Link to="/register">REGISTER</Link>
+                    <NavLink href="/register">
+                    REGISTER
                         
                     </NavLink>
                 </NavItem>

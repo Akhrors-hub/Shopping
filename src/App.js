@@ -22,6 +22,7 @@ import AppFooter from "./Layout/AppFooter"
 import ResizeDetector from 'react-resize-detector';
 import cx from 'classnames'
 import DetailedProducts from "./components/DetailedProducts";
+
 const customStyles = {
   content: {
     top: '50%',
@@ -30,6 +31,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    position: 'absolute',
+    zIndex: 99
   },
 };
 Modal.setAppElement('#root');
@@ -69,6 +72,7 @@ console.log(err)
   console.log()
   function closeModal() {
     setIsOpen(false);
+    console.log("teest")
   }
   function modalAlert(msg){
     console.log('test modal')
@@ -88,6 +92,7 @@ console.log(err)
 
        
     <div className="App">
+        <Router> 
  <div className={user&&user.type=="Admin"?cx(
                     "app-container app-theme-" + colorScheme,
                     {'fixed-header': enableFixedHeader},
@@ -96,10 +101,10 @@ console.log(err)
                     {'closed-sidebar': enableClosedSidebar || width < 1250},
                     {'closed-sidebar-mobile': closedSmallerSidebar || width < 1250},
                     {'sidebar-mobile-open': enableMobileMenu},
-                ):isAuth&&cx( "app-container app-theme-" + colorScheme,
-                {'fixed-header': enableFixedHeader})}>
+                ):isAuth?cx( "app-container app-theme-" + colorScheme,
+                {'fixed-header': enableFixedHeader}):" "}>
                     <ResizeDetector handleWidth onResize={onResize} />
-    <Router> 
+  
        <AppHeader />
        
         <div className="app-main">
@@ -111,7 +116,7 @@ console.log(err)
    
 
 
-<div>
+
 
       <Modal
         isOpen={modalIsOpen}
@@ -123,7 +128,7 @@ console.log(err)
         <div>{modalText}</div>
        
       </Modal>
-    </div>
+   
   <Routes>
   <Route path = "/" element = {<Home />}> </Route>
   <Route path = "/product/add" element = {user&&user.type=="Admin"?<AddProduct />:<Home />}> </Route>
@@ -137,9 +142,10 @@ console.log(err)
   {window.location.pathname!="/login"&&window.location.pathname!="/register"&&<Footer />}</div>
   </div>
   </div>
-</Router>
+
 
 </div>
+</Router>
  </div>
  
   );

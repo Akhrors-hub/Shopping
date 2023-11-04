@@ -3,6 +3,33 @@ import axios from "../utils/axios"
 import { connect } from "react-redux"
 import { login } from "../actions/authactions"
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+const Center = styled.div`
+margin: 100px auto;
+width:178px;
+
+
+`
+const InputLabel =  styled.label`
+width: 100px;
+display: block;
+margin-top:10px;
+
+
+`
+const Title = styled.h2`
+text-align: center;
+`
+const Button = styled.button`
+margin-left: 110px;
+margin-top:10px;
+
+`
+const Form = styled.form`
+margin:10px;
+
+`
+
 const Login = ({auth, login}) => {
   const navigate = useNavigate()
   // State to store form data
@@ -34,12 +61,12 @@ if(auth&&auth.isAuth){
   navigate("/")
 }
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <Center>
+      <Title>Login</Title>
+      <Form onSubmit={handleSubmit}>
        
         <div>
-          <label>Email:</label>
+          <InputLabel>Email:</InputLabel>
           <input
             type="email"
             name="email"
@@ -49,7 +76,7 @@ if(auth&&auth.isAuth){
           />
         </div>
         <div>
-          <label>Password:</label>
+          <InputLabel>Password:</InputLabel>
           <input
             type="password"
             name="password"
@@ -58,9 +85,9 @@ if(auth&&auth.isAuth){
             required
           />
         </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+        <Button type="submit">Login</Button>
+      </Form>
+    </Center>
   );
 };
 const mapStateToProps = state =>({auth: state}) 
